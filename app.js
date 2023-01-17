@@ -53,6 +53,12 @@ app.get('/lessons', (req, res) => {
   res.end(JSON.stringify(lessons));
 });
 
+app.get('/users', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end(JSON.stringify(users));
+});
+
 app.listen(3000, () => {
   console.log('Server running at 3000!');
 });
