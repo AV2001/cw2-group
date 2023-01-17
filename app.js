@@ -47,6 +47,12 @@ const users = [
   },
 ];
 
+app.get('/lessons', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end(JSON.stringify(lessons));
+});
+
 app.listen(3000, () => {
   console.log('Server running at 3000!');
 });
