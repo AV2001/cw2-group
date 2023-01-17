@@ -24,6 +24,29 @@ const lessons = [
   },
 ];
 
+const users = [
+  {
+    email: 'johndoe@gmail.com',
+    password: '1234',
+  },
+  {
+    email: 'johndoe@gmail.com',
+    password: '1234',
+  },
+  {
+    email: 'johndoe@gmail.com',
+    password: '1234',
+  },
+  {
+    email: 'johndoe@gmail.com',
+    password: '1234',
+  },
+  {
+    email: 'johndoe@gmail.com',
+    password: '1234',
+  },
+];
+
 app.listen(3000, () => {
   console.log('Server running at 3000!');
 });
