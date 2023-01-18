@@ -27,23 +27,23 @@ let lessons = [
 let users = [
   {
     email: "johndoe@gmail.com",
+    password: "123joh",
+  },
+  {
+    email: "admin@gmail.com",
     password: "1234",
   },
   {
-    email: "johndoe@gmail.com",
-    password: "1234",
+    email: "anirudh@gmail.com",
+    password: "123ani",
   },
   {
-    email: "johndoe@gmail.com",
-    password: "1234",
+    email: "abdul@gmail.com",
+    password: "123abd",
   },
   {
-    email: "johndoe@gmail.com",
-    password: "1234",
-  },
-  {
-    email: "johndoe@gmail.com",
-    password: "1234",
+    email: "khadija@gmail.com",
+    password: "123kha",
   },
 ];
 
