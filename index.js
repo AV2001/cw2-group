@@ -47,6 +47,10 @@ let users = [
   },
 ];
 
+app.get("/", (req, res) => {
+  res.render("index.html");
+} 
+
 app.get("/lessons", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.writeHead(200, { "Content-Type": "text/plain" });
