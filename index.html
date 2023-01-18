@@ -20,14 +20,14 @@
     </div>
     <script>
       let store = new Vue({
-        el: '#store',
+        el: "#store",
         data: {
           lessons: [],
         },
         created: function () {
-          console.log('Requesting data from server...');
+          console.log("Requesting data from server...");
 
-          fetch('http://localhost:3000/lessons').then((res) => {
+          fetch("http://localhost:3000/lessons").then((res) => {
             res.json().then((json) => {
               store.lessons = json;
               console.log(json);
