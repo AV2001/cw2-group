@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.8rem;
+}
+
+#store {
+  display: grid;
+  padding: 3.2rem;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2.4rem;
+}
+
+.lesson {
+  background: rgba(77, 171, 247, 0.72);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 1.2rem;
+  transition: all 0.3s;
+}
+
+.lesson:hover {
+  transform: scale(1.2);
+}
+
+.lesson li {
+  margin-left: 3.2rem;
+}
