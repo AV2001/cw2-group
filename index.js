@@ -26,8 +26,8 @@ let lessons = [
 
 let users = [
   {
-    email: "johndoe@gmail.com",
-    password: "123joh",
+    email: "sami@gmail.com",
+    password: "123sam",
   },
   {
     email: "admin@gmail.com",
