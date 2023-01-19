@@ -1,68 +1,68 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 
 let lessons = [
   {
-    topic: "Math",
-    location: "Hendon",
+    topic: 'Math',
+    location: 'Hendon',
     price: 100,
   },
   {
-    topic: "English",
-    location: "Colindale",
+    topic: 'English',
+    location: 'Colindale',
     price: 80,
   },
   {
-    topic: "Science",
-    location: "Brent cross",
+    topic: 'Science',
+    location: 'Brent cross',
     price: 90,
   },
   {
-    topic: "Spanish",
-    location: "Goders green",
+    topic: 'Spanish',
+    location: 'Goders green',
     price: 120,
   },
 ];
 
 let users = [
   {
-    email: "johndoe@gmail.com",
-    password: "123joh",
+    email: 'johndoe@gmail.com',
+    password: '123joh',
   },
   {
-    email: "admin@gmail.com",
-    password: "1234",
+    email: 'admin@gmail.com',
+    password: '1234',
   },
   {
-    email: "anirudh@gmail.com",
-    password: "123ani",
+    email: 'anirudh@gmail.com',
+    password: '123ani',
   },
   {
-    email: "abdul@gmail.com",
-    password: "123abd",
+    email: 'abdul@gmail.com',
+    password: '123abd',
   },
   {
-    email: "khadija@gmail.com",
-    password: "123kha",
+    email: 'khadija@gmail.com',
+    password: '123kha',
   },
 ];
 
-app.get("/", (req, res) => {
-  res.render("index.html");
-} 
+app.get('/', (req, res) => {
+  res.render('index.html');
+});
 
-app.get("/lessons", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.writeHead(200, { "Content-Type": "text/plain" });
+app.get('/lessons', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end(JSON.stringify(lessons));
 });
 
-app.get("/users", (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.writeHead(200, { "Content-Type": "text/plain" });
+app.get('/users', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end(JSON.stringify(users));
 });
 
 app.listen(3000, () => {
-  console.log("Server running at 3000!");
+  console.log('Server running at 3000!');
 });
