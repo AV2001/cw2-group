@@ -48,7 +48,11 @@ let users = [
 ];
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.send(`<h1>Usage</h1>
+  <p>Add <strong>"/lessons"</strong> to the end of the URL to receive the lessons data in JSON.</p>
+  <p>Add <strong>"/users"</strong> to the end of the URL to receive the users data in JSON.</p>
+  <p>To see the output of the lessons, run the server using node index.js and then run the local server in VS Code on the index.html file.</p>
+  `);
 });
 
 app.get('/lessons', (req, res) => {
@@ -61,6 +65,10 @@ app.get('/users', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end(JSON.stringify(users));
+});
+
+app.get('*', (req, res) => {
+  res.send('<h1>404 File Not Found!</h1>');
 });
 
 app.listen(3000, () => {
