@@ -48,7 +48,7 @@ let users = [
 ];
 
 app.get('/', (req, res) => {
-  res.render('index.html');
+  res.render('index');
 });
 
 app.get('/lessons', (req, res) => {
