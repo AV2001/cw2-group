@@ -71,6 +71,9 @@ app.get('*', (req, res) => {
   res.send('<h1>404 File Not Found!</h1>');
 });
 
-app.listen(3000, () => {
-  console.log('Server running at 3000!');
-});
+const port = process.env.port || 3000;
+app.listen(port);
+
+// app.listen(3000, () => {
+//   console.log('Server running at 3000!');
+// });
