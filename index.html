@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lessons</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-  </head>
-  <body>
-    <div id="store">
-      <figure v-for="lesson in lessons" class="lesson">
-        <ul>
-          <li>Topic: {{ lesson.topic }}</li>
-          <li>Location: {{ lesson.location }}</li>
-          <li>Price: {{ lesson.price }}</li>
-        </ul>
-      </figure>
-    </div>
-    <script>
-      let store = new Vue({
-        el: "#store",
-        data: {
-          lessons: [],
-        },
-        created: function () {
-          console.log("Requesting data from server...");
 
-          fetch("http://localhost:3000/lessons").then((res) => {
-            res.json().then((json) => {
-              store.lessons = json;
-              console.log(json);
-            });
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lessons</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="store">
+    <figure v-for="lesson in lessons" class="lesson">
+      <ul>
+        <li>Topic: {{ lesson.topic }}</li>
+        <li>Location: {{ lesson.location }}</li>
+        <li>Price: {{ lesson.price }}</li>
+      </ul>
+    </figure>
+  </div>
+  <script>
+    // creating a Vue instance
+    let store = new Vue({
+      el: "#store",
+      data: {
+        // lessons array to store lessons requested from the server
+        lessons: [],
+      },
+      created: function () {
+        console.log("Requesting data from server...");
+
+        // sending a get request to the '/lessons' route
+        fetch("http://localhost:3000/lessons").then((res) => {
+          // parsing the response text (lessons) as JSON
+          res.json().then((json) => {
+            // storing the parsed lessons in the lessons array
+            store.lessons = json;
+            console.log(json);
           });
-        },
-      });
-    </script>
-  </body>
+        });
+      },
+    });
+  </script>
+</body>
+
 </html>

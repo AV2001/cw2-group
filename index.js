@@ -1,6 +1,8 @@
+// using the express library
 const express = require('express');
 const app = express();
 
+// creating the lessons array
 let lessons = [
   {
     topic: 'Math',
@@ -24,6 +26,7 @@ let lessons = [
   },
 ];
 
+// creating the users array
 let users = [
   {
     email: 'johndoe@gmail.com',
@@ -47,6 +50,7 @@ let users = [
   },
 ];
 
+// get request to the '/' (root) route will show the application usage
 app.get('/', (req, res) => {
   res.send(`<h1>Usage</h1>
   <p>Add <strong>"/lessons"</strong> to the end of the URL to receive the lessons data in JSON.</p>
@@ -55,25 +59,25 @@ app.get('/', (req, res) => {
   `);
 });
 
+// get request to the '/lessons' route will return the lessons array in JSON format
 app.get('/lessons', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end(JSON.stringify(lessons));
 });
 
+// get request to the '/users' route will return the users array in JSON format
 app.get('/users', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.end(JSON.stringify(users));
 });
 
+// get request to any other route will result in a 404 error
 app.get('*', (req, res) => {
   res.send('<h1>404 File Not Found!</h1>');
 });
 
-const port = process.env.port || 3000;
-app.listen(port);
-
-// app.listen(3000, () => {
-//   console.log('Server running at 3000!');
-// });
+app.listen(3000, () => {
+  console.log('Server running at 3000!');
+});
